@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -19,29 +18,66 @@
 
         .wrapper { max-width: 1000px; margin: 0 auto; }
 
-        /* HEADER */
         header { padding-top: 20px; margin-bottom: 80px; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.1rem; font-weight: 700; letter-spacing: 2px; color: #fff; text-decoration: none; }
         .available { font-size: 0.7rem; color: #007aff; border: 1px solid #007aff; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* HERO */
         .hero { margin-bottom: 100px; }
         .hero h1 { font-size: clamp(3.5rem, 12vw, 8rem); line-height: 0.85; font-weight: 700; margin-bottom: 30px; letter-spacing: -3px; }
         .hero p { font-size: 1.4rem; color: #888; max-width: 550px; line-height: 1.4; }
 
-        /* SECTION LABEL */
-        .section-label { font-size: 0.7rem; color: #444; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 30px; border-bottom: 1px solid #111; padding-bottom: 10px; display: block; }
+        .section-label { 
+            font-size: 1.2rem; 
+            color: #fff; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            margin-bottom: 40px; 
+            border-bottom: 2px solid #007aff; 
+            padding-bottom: 15px; 
+            display: block;
+            font-weight: 700;
+        }
 
-        /* PORTFOLIO - VIDEA */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 60px; }
+        /* VIDEO GRID */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 100px; }
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; border: 1px solid #222; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* PORTFOLIO - THUMBNAILY */
+        /* CHANNELS SECTION */
+        .channels-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 100px; }
+        .channel-card { 
+            background: linear-gradient(145deg, #0a0a0a, #050505);
+            border: 1px solid #1a1a1a; 
+            padding: 25px; 
+            border-radius: 25px; 
+            text-decoration: none; 
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .channel-card:hover { 
+            border-color: #007aff; 
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 122, 255, 0.15);
+        }
+        .channel-avatar { 
+            width: 70px; 
+            height: 70px; 
+            border-radius: 50%; 
+            border: 2px solid #222;
+            object-fit: cover;
+        }
+        .channel-info { display: flex; flex-direction: column; }
+        .channel-name { color: #fff; font-weight: 700; font-size: 1.2rem; }
+        .channel-subs { color: #007aff; font-size: 0.9rem; font-weight: 500; margin-top: 2px; }
+        .channel-meta { color: #555; font-size: 0.7rem; text-transform: uppercase; margin-top: 4px; letter-spacing: 1px; }
+
+        /* GRAPHICS GRID */
         .thumb-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 100px; }
         .thumb-item img { width: 100%; border-radius: 15px; border: 1px solid #222; transition: 0.3s ease; display: block; }
         .thumb-item img:hover { transform: scale(1.03); border-color: #007aff; }
-        
+
         /* PRICELIST */
         .price-list { margin-bottom: 120px; }
         .price-item { 
@@ -56,12 +92,10 @@
         .price-name { font-size: 1.6rem; font-weight: 500; }
         .price-value { font-size: 1.6rem; font-weight: 300; color: #fff; }
 
-        /* STEPS */
         .steps { margin-bottom: 120px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
         .step h3 { font-size: 1.5rem; margin-bottom: 10px; color: #fff; }
         .step p { font-size: 1rem; color: #666; line-height: 1.5; }
 
-        /* CONTACT */
         .contact { 
             margin: 150px 0 100px; 
             text-align: center; 
@@ -98,7 +132,7 @@
             <p>Ahoj, jsem Koody. Tvořím vizuální obsah, který prodává a baví. Čistě, rychle a profesionálně.</p>
         </section>
 
-        <span class="section-label">Vybraná práce (Video Edit)</span>
+        <span class="section-label">Video Edit</span>
         <section class="portfolio-grid">
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/H5hhJW-uVT4" allowfullscreen></iframe>
@@ -111,22 +145,42 @@
             </div>
         </section>
 
-        <span class="section-label">Grafika & Náhleďáky</span>
+        <span class="section-label">Spolupráce</span>
+        <section class="channels-grid">
+            <a href="https://www.youtube.com/@radmil.schneider" target="_blank" class="channel-card">
+                <img src="https://yt3.googleusercontent.com/ICAxIK9U1cQxO3g9yjAmCSwhb1_MDNfFHJT2wg1_uslNCUWqZgkflon7ViC1f9EmEs_NTGCHug=s800-c-k-c0x00ffffff-no-rj" alt="Radmil" class="channel-avatar">
+                <div class="channel-info">
+                    <span class="channel-name">Radmil Schneider</span>
+                    <span class="channel-subs">171K odběratelů</span>
+                    <span class="channel-meta">Video Editing</span>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/@thejohny97" target="_blank" class="channel-card">
+                <img src="https://yt3.googleusercontent.com/vp77sVoy5MocfCPDdgqmAhwnulrtnJcEBOEOaQs8aR-xBpsXcENm5_VmahG_KGPqsCFIYmnYPF0=s800-c-k-c0x00ffffff-no-rj" alt="TheJohny97" class="channel-avatar">
+                <div class="channel-info">
+                    <span class="channel-name">TheJohny97</span>
+                    <span class="channel-subs">69.8K odběratelů</span>
+                    <span class="channel-meta">Video Editing</span>
+                </div>
+            </a>
+        </section>
+
+        <span class="section-label">Grafika</span>
         <section class="thumb-grid">
-            <div class="thumb-item"><img src="https://i.imgur.com/1KkjFr4.jpeg" alt="Thumbnail 1"></div>
-            <div class="thumb-item"><img src="https://i.imgur.com/XEF1uBZ.jpeg" alt="Thumbnail 2"></div>
-            <div class="thumb-item"><img src="https://i.imgur.com/R3h0xEp.jpeg" alt="Thumbnail 3"></div>
+            <div class="thumb-item"><img src="https://i.imgur.com/1KkjFr4.jpeg" alt="Grafika 1"></div>
+            <div class="thumb-item"><img src="https://i.imgur.com/wVWGJEf.png" alt="Grafika 2"></div>
+            <div class="thumb-item"><img src="https://i.imgur.com/R3h0xEp.jpeg" alt="Grafika 3"></div>
         </section>
 
         <div class="section-label">Ceník služeb</div>
         <section class="price-list">
             <div class="price-item"><div class="price-name">Grafika / Náhleďák</div><div class="price-value">100 Kč</div></div>
-            <div class="price-item"><div class="price-name">Easy Edit</div><div class="price-value">200 Kč</div></div>
-            <div class="price-item"><div class="price-name">Good Edit</div><div class="price-value">250 Kč</div></div>
-            <div class="price-item"><div class="price-name">Super Edit</div><div class="price-value">500 Kč</div></div>
-            <div class="price-item"><div class="price-name">Easy Combo</div><div class="price-value">270 Kč</div></div>
-            <div class="price-item"><div class="price-name">Good Combo</div><div class="price-value">320 Kč</div></div>
-            <div class="price-item"><div class="price-name">Pro Combo</div><div class="price-value">550 Kč</div></div>
+            <div class="price-item"><div class="price-name">Easy Edit</div><div class="price-value">300 Kč</div></div>
+            <div class="price-item"><div class="price-name">Good Edit</div><div class="price-value">400 Kč</div></div>
+            <div class="price-item"><div class="price-name">Super Edit</div><div class="price-value">600 Kč</div></div>
+            <div class="price-item"><div class="price-name">Easy Combo (2x Easy)</div><div class="price-value">500 Kč</div></div>
+            <div class="price-item"><div class="price-name">Good Combo (2x Good)</div><div class="price-value">700 Kč</div></div>
+            <div class="price-item"><div class="price-name">Super Combo (2x Super)</div><div class="price-value">1 000 Kč</div></div>
         </section>
 
         <div class="section-label">Proces spolupráce</div>
@@ -145,7 +199,7 @@
         </section>
 
         <footer>
-            &copy; 2026 KOODY.STUDIO &mdash; ALL RIGHTS RESERVED
+            © 2026 KOODY.STUDIO — ALL RIGHTS RESERVED
         </footer>
     </div>
 
